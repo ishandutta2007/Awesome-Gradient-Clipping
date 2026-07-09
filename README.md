@@ -13,7 +13,10 @@ The technical methodology of gradient scaling has transitioned from rigid elemen
 
 
 ```mermaid
-[Coordinate Value Truncation] ───> [Global Vector Norm Caps] ───> [Adaptive Layer AGC (NFNet, 2021)] ───> [Per-Sample DP-SGD Clipping](Destructive Vector-Direction Shifts)    (Preserving True Gradient Layouts)       (Batch-Size Independent Scale Rules)     (Privacy-Certified Gradient Masking)
+flowchart LR
+    A["Coordinate Value Truncation (Destructive Vector-Direction Shifts)"] --> B["Global Vector Norm Caps (Preserving True Gradient Layouts)"]
+    B --> C["Adaptive Layer AGC (NFNet, 2021) (Batch-Size Independent Scale Rules)"]
+    C --> D["Per-Sample DP-SGD Clipping (Privacy-Certified Gradient Masking)"]
 ```
 
 *   **The Element-Wise Value Truncation Era (Traditional Recurrent Tuning, Pre-2012)**
@@ -60,7 +63,9 @@ To calculate per-sample gradient limits safely without destroying hardware proce
 
 
 ```mermaid
-The DP-SGD Private Clipping Pipeline[Confidential Mini-Batch] ───> [Calculate Per-Sample Gradients] ───> [Clip Vector L₂ Norm to Threshold C]│▼[Update Private Model Weights] <─── [Add Calibrated Gaussian Noise] <─── [Compute Batch Gradient Average]
+flowchart TB
+    A[Confidential Mini-Batch] --> B[Calculate Per-Sample Gradients] --> C[Clip Vector L₂ Norm to Threshold C]
+    C --> D[Compute Batch Gradient Average] --> E[Add Calibrated Gaussian Noise] --> F[Update Private Model Weights]
 ```
 
 *   **Vectorized Opacus Kernels**
