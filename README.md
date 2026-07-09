@@ -1,5 +1,9 @@
-# Awesome-Gradient-Clipping
-## Gradient Clipping in AI: History, Progression, Variants, & Applications
+<div align="center">
+  <img src="assets/banner.svg" alt="Awesome Gradient Clipping Banner" />
+</div>
+
+# 🌟 Awesome-Gradient-Clipping
+## 🚀 Gradient Clipping in AI: History, Progression, Variants, & Applications
 
 **Gradient Clipping** is a hardware-aware optimization and regularization paradigm designed to stabilize the training loops of deep neural networks by constraining the magnitude of backpropagated error gradients [INDEX: 16]. Originally conceptualized to resolve the catastrophic **exploding gradient problem** in Recurrent Neural Networks (RNNs), gradient clipping mathematically intercepts the parameter update step before weights are modified [INDEX: 16]. 
 
@@ -7,7 +11,7 @@ When individual or structural parameter gradients grow excessively large—often
 
 ---
 
-## 1. The Macro Chronological Evolution
+## 🕰️ 1. The Macro Chronological Evolution
 
 The technical methodology of gradient scaling has transitioned from rigid element-wise coordinate truncations to global structural vector norm caps, adaptive layer-wise normalization steps, and highly private noise-fused clipping boundaries.
 
@@ -28,7 +32,7 @@ flowchart LR
 
 ---
 
-## 2. Core Functional & Mathematical Variants
+## 🧮 2. Core Functional & Mathematical Variants
 
 Gradient Clipping frameworks are strictly categorized based on the specific geometric parameters and tensor granularities they clip during backpropagation.
 
@@ -41,7 +45,7 @@ Gradient Clipping frameworks are strictly categorized based on the specific geom
 
 ---
 
-## 3. The Private Optimization Clipping Pipeline
+## 🔒 3. The Private Optimization Clipping Pipeline
 
 To calculate per-sample gradient limits safely without destroying hardware processing velocities, private training engines execute vectorized compilation loops directly within GPU registers.
 
@@ -59,7 +63,7 @@ flowchart TB
 
 ---
 
-## 4. Production Engineering Challenges & Cluster Solutions
+## ⚙️ 4. Production Engineering Challenges & Cluster Solutions
 
 Deploying gradient clipping constraints across massive multi-node distributed training infrastructures introduces critical performance stalls and precision drops [INDEX: 22].
 
@@ -70,7 +74,7 @@ Deploying gradient clipping constraints across massive multi-node distributed tr
 
 ---
 
-## 5. Frontier Real-World AI Industrial Applications
+## 🌍 5. Frontier Real-World AI Industrial Applications
 
 | Application | Details | Year | Paper Link |
 |---|---|---|---|
@@ -80,7 +84,7 @@ Deploying gradient clipping constraints across massive multi-node distributed tr
 
 ---
 
-## References
+## 📚 References
 1. Pascanu, R., Mikolov, T., & Bengio, Y. (2012). On the difficulty of training recurrent neural networks. *International Conference on Machine Learning (ICML)*, 1359-1366 [INDEX: 16].
 2. Abadi, M., et al. (2016). Deep learning with differential privacy: Per-sample gradient clipping architectures. *Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security*, 308-318.
 3. Shoeybi, M., et al. (2019). Megatron-LM: Training multi-billion parameter language models using model parallel gradient clipping optimizations. *arXiv preprint arXiv:1909.08053*.

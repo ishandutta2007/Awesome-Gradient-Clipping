@@ -1,0 +1,46 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A24">
+        <animate attributeName="stop-color" values="#1A1A24;#2A1A44;#1A1A24" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0F0F16" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="200" fill="url(#bg)" rx="15" ry="15" />
+  
+  <!-- Animated Gradient Line representing clipping -->
+  <path d="M 0 150 Q 200 50, 400 150 T 800 150" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="4" />
+  <path d="M 0 150 Q 200 50, 400 150 T 800 150" fill="none" stroke="#4FACFE" stroke-width="4" stroke-dasharray="800" stroke-dashoffset="800">
+    <animate attributeName="stroke-dashoffset" values="800;0;800" dur="4s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Clipping Line (Threshold) -->
+  <line x1="0" y1="70" x2="800" y2="70" stroke="#FF416C" stroke-width="2" stroke-dasharray="10,5">
+    <animate attributeName="stroke-dashoffset" values="0;15" dur="1s" repeatCount="indefinite" linear="true"/>
+  </line>
+  
+  <!-- Title Text -->
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#textGrad)" text-anchor="middle" dominant-baseline="middle">
+    Awesome Gradient Clipping
+  </text>
+  
+  <!-- Subtitle Text -->
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="16" fill="#A0A0B0" text-anchor="middle" dominant-baseline="middle">
+    Stabilizing AI Training Through Constraint Optimization
+  </text>
+  
+  <!-- Small glowing particles -->
+  <circle cx="150" cy="80" r="2" fill="#00F2FE">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="650" cy="110" r="3" fill="#FF416C">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" delay="1s" />
+  </circle>
+</svg>
